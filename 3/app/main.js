@@ -8,7 +8,6 @@ var instructions = document.getElementById( 'instructions' );
 var cubes = [];
 var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
 var addedSphere = false; 
-
 var Options = function() {
 	this.debugMode = false;
 	this.cubeSize = 25;
@@ -16,11 +15,43 @@ var Options = function() {
 };
 
 var options = new Options();
+var gui = new dat.GUI();
+gui.add(options, 'debugMode');
+gui.add(options, 'cubeSize', 0, 100);
+gui.add(options, 'distance', 5, 200);
+
+var uniforms1 = {
+	time: { type: "f", value: 999999 },
+	resolution: { type: "v2", value: new THREE.Vector2() }
+};
+
+var uniforms2  = {
+	time: { type: "f", value: 1.0 },
+	resolution: { type: "v2", value: new THREE.Vector2() },
+	texture: { type: "t", value: THREE.ImageUtils.loadTexture( "textures/disturb.jpg" ) }
+};
 
 var cubeGeometry = new THREE.CubeGeometry( options.cubeSize, options.cubeSize, options.cubeSize ); 
 var cubeMatrial = new THREE.MeshLambertMaterial({color: 0x0000bb}); 
 
+var shaderMaterial = new THREE.ShaderMaterial( {
+	uniforms: uniforms1,
+	vertexShader: document.getElementById( 'vertexShader' ).textContent,
+	fragmentShader: document.getElementById( 'fragment_shader4' ).textContent,
+	transparent: true
+} );
+
+var shaderBackground = new THREE.ShaderMaterial( {
+	uniforms: uniforms1,
+	vertexShader: document.getElementById( 'vertexShader' ).textContent,
+	fragmentShader: document.getElementById( 'fragment_shader3' ).textContent,
+	transparent: true
+} );
+
+
 var clock = new THREE.Clock();
+
+var superShaderMaterial = new THREE.MeshFaceMaterial( [ shaderMaterial, shaderMaterial, shaderMaterial, shaderMaterial, shaderMaterial, shaderMaterial ] ) 
 
 if ( havePointerLock ) {
 	var element = document.body;
@@ -191,7 +222,7 @@ function animate() {
 				if(cubes[x][z] === undefined){
 					cubes[x][z] = new THREE.Mesh( 
 						cubeGeometry, 
-						cubeMatrial
+						superShaderMaterial
 					);
 					cubes[x][z].position.y = -options.cubeSize; 
 					cubes[x][z].position.x = x; 
