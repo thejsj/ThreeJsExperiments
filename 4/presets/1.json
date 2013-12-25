@@ -1,0 +1,35 @@
+{
+  "preset": "sdf",
+  "remembered": {
+    "sdf": {
+      "0": {
+        "debugMode": false,
+        "cameraPositionX": -1618.128554196106,
+        "cameraPositionY": 600,
+        "cameraPositionZ": 587.627089436497,
+        "cameraRotationX": 254.10305014647594,
+        "cameraRotationY": 0,
+        "cameraRotationZ": 0,
+        "lightPositionX": -1618,
+        "lightPositionY": 150,
+        "lightPositionZ": -100,
+        "lightRotationX": 199,
+        "lightRotationY": 95.28864380492848,
+        "lightRotationZ": 182.6365672927796
+      }
+    }
+  },
+  "closed": false,
+  "folders": {
+    "Camera": {
+      "preset": "Default",
+      "closed": false,
+      "folders": {}
+    },
+    "Light": {
+      "preset": "Default",
+      "closed": false,
+      "folders": {}
+    }
+  }
+}

@@ -153,6 +153,7 @@ function animate() {
 	uniforms2.time.value = clock.elapsedTime;
 
 	requestAnimationFrame( animate );
+
 	controls.isOnObject( false );
 	ray.ray.origin.copy( controls.getObject().position );
 	ray.ray.origin.y -= 10;
