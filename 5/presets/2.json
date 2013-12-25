@@ -1,0 +1,38 @@
+{
+  "preset": "dsf",
+  "remembered": {
+    "dsf": {
+      "0": {
+        "cameraPositionX": -3603.308633465448,
+        "cameraPositionY": 100,
+        "cameraPositionZ": 367.05152507323874,
+        "cameraRotationX": 178.66620713424092,
+        "cameraRotationY": 0,
+        "cameraRotationZ": 0,
+        "lightPositionX": -1618,
+        "lightPositionY": 150,
+        "lightPositionZ": -100,
+        "debugMode": false,
+        "cubeSize": 100
+      }
+    }
+  },
+  "closed": false,
+  "folders": {
+    "Camera": {
+      "preset": "Default",
+      "closed": true,
+      "folders": {}
+    },
+    "Light": {
+      "preset": "Default",
+      "closed": true,
+      "folders": {}
+    },
+    "Other": {
+      "preset": "Default",
+      "closed": true,
+      "folders": {}
+    }
+  }
+}
