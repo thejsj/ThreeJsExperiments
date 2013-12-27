@@ -1,9 +1,14 @@
 <html>
 <head>
-	<title>Three.js Example</title>
+	<title>Three.js Experiments #5</title>
+	<style>	
+		html, body, #main {
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
 </head>
 <body>
-	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="libs/three.js" type="text/javascript"></script>
 	<script src="libs/request-animations.js" type="text/javascript"></script>
@@ -16,7 +21,6 @@
 		varying vec2 vUv;
 		void main() {
 			vec2 position = -1.0 + 2.0 * vUv;
-
 			float red = abs(sin(position.x * position.y + time / 5.0));
 			float green = abs(sin(position.x * position.y + time / 4.0));
 			float blue = abs(sin(position.x * position.y + time / 3.0 ));
@@ -31,9 +35,6 @@
 			vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
 			gl_Position = projectionMatrix * mvPosition;
 		}
-	</script>
-	<script>
-		console.log(SoftFloat);
 	</script>
 	<script src="app/main.js" type="text/javascript"></script>
 </body>

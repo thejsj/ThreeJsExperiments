@@ -15,10 +15,10 @@ var Options = function() {
 };
 
 var options = new Options();
-var gui = new dat.GUI();
-gui.add(options, 'debugMode');
-gui.add(options, 'cubeSize', 0, 100);
-gui.add(options, 'distance', 5, 200);
+// var gui = new dat.GUI();
+// gui.add(options, 'debugMode');
+// gui.add(options, 'cubeSize', 0, 100);
+// gui.add(options, 'distance', 5, 200);
 
 var uniforms1 = {
 	time: { type: "f", value: 999999 },

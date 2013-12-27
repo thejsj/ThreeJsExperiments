@@ -35,21 +35,21 @@ var Options = function() {
 };
 
 var options = new Options();
-var gui = new dat.GUI();
-gui.add(options, 'debugMode');
+// var gui = new dat.GUI();
+// gui.add(options, 'debugMode');
 
-var cameraGuiGroup = gui.addFolder('Camera');
-cameraGuiGroup.add(options, 'cameraPositionX', -10000, 10000);
-cameraGuiGroup.add(options, 'cameraPositionY', -10000, 10000);
-cameraGuiGroup.add(options, 'cameraPositionZ', -10000, 10000);
-cameraGuiGroup.add(options, 'cameraRotationX', 0, 360);
-cameraGuiGroup.add(options, 'cameraRotationY', 0, 360);
-cameraGuiGroup.add(options, 'cameraRotationZ', 0, 360);
+// var cameraGuiGroup = gui.addFolder('Camera');
+// cameraGuiGroup.add(options, 'cameraPositionX', -10000, 10000);
+// cameraGuiGroup.add(options, 'cameraPositionY', -10000, 10000);
+// cameraGuiGroup.add(options, 'cameraPositionZ', -10000, 10000);
+// cameraGuiGroup.add(options, 'cameraRotationX', 0, 360);
+// cameraGuiGroup.add(options, 'cameraRotationY', 0, 360);
+// cameraGuiGroup.add(options, 'cameraRotationZ', 0, 360);
 
-var lightGuiGroup = gui.addFolder('Light');
-lightGuiGroup.add(options, 'lightPositionX', -10000, 10000);
-lightGuiGroup.add(options, 'lightPositionY', -10000, 10000);
-lightGuiGroup.add(options, 'lightPositionZ', -10000, 10000);
+// var lightGuiGroup = gui.addFolder('Light');
+// lightGuiGroup.add(options, 'lightPositionX', -10000, 10000);
+// lightGuiGroup.add(options, 'lightPositionY', -10000, 10000);
+// lightGuiGroup.add(options, 'lightPositionZ', -10000, 10000);
 
 // ## bootstrap functions
 // initialiaze everything

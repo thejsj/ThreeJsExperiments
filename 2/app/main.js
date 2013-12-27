@@ -11,8 +11,8 @@ var addedSphere = false;
 
 var Options = function() {
 	this.debugMode = false;
-	this.cubeSize = 25;
-	this.distance = 25;
+	this.cubeSize = 10;
+	this.distance = 30;
 };
 
 var options = new Options();
@@ -21,6 +21,25 @@ var cubeGeometry = new THREE.CubeGeometry( options.cubeSize, options.cubeSize, o
 var cubeMatrial = new THREE.MeshLambertMaterial({color: 0x0000bb}); 
 
 var clock = new THREE.Clock();
+
+var uniforms1 = {
+	time: { type: "f", value: 999999 },
+	resolution: { type: "v2", value: new THREE.Vector2() }
+};
+
+var uniforms2  = {
+	time: { type: "f", value: 1.0 },
+	resolution: { type: "v2", value: new THREE.Vector2() },
+	texture: { type: "t", value: THREE.ImageUtils.loadTexture( "textures/disturb.jpg" ) }
+};
+
+var lineMaterial = new THREE.LineBasicMaterial({
+	color: 0x0000ff
+});
+
+ var lineGeometry = new THREE.Geometry();
+lineGeometry.vertices.push(new THREE.Vector3(0, 200, 0));
+lineGeometry.vertices.push(new THREE.Vector3(0, -200, 0));
 
 if ( havePointerLock ) {
 	var element = document.body;
@@ -69,9 +88,6 @@ if ( havePointerLock ) {
 } else {
 	instructions.innerHTML = 'Your browser doesn\'t seem to support Pointer Lock API';
 }
-
-
-
 function init() {
 
 	// Create Scene and Camera
@@ -85,6 +101,7 @@ function init() {
 	var light = new THREE.DirectionalLight( 0xffffff, 1.5 );
 	light.position.set( 1, 1, 1 );
 	scene.add( light );
+
 	var light = new THREE.DirectionalLight( 0xffffff, 0.75 );
 	light.position.set( -1, - 0.5, -1 );
 	scene.add( light );
@@ -195,8 +212,8 @@ function animate() {
 						cubeMatrial
 					);
 					cubes[x][z].position.y = -options.cubeSize; 
-					cubes[x][z].position.x = x; 
-					cubes[x][z].position.z = z;
+					cubes[x][z].position.x = x;// options.cubeSize; 
+					cubes[x][z].position.z = z; // options.cubeSize;
 					console.log("Adding Object");
 					scene.add( cubes[x][z] );
 				}

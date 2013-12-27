@@ -45,25 +45,24 @@ var Options = function() {
 };
 
 var options = new Options();
-var gui = new dat.GUI();
+// var gui = new dat.GUI();
 
+// var cameraGuiGroup = gui.addFolder('Camera');
+// cameraGuiGroup.add(options, 'cameraPositionX', -10000, 10000);
+// cameraGuiGroup.add(options, 'cameraPositionY', -10000, 10000);
+// cameraGuiGroup.add(options, 'cameraPositionZ', -10000, 10000);
+// cameraGuiGroup.add(options, 'cameraRotationX', 0, 360);
+// cameraGuiGroup.add(options, 'cameraRotationY', 0, 360);
+// cameraGuiGroup.add(options, 'cameraRotationZ', 0, 360);
 
-var cameraGuiGroup = gui.addFolder('Camera');
-cameraGuiGroup.add(options, 'cameraPositionX', -10000, 10000);
-cameraGuiGroup.add(options, 'cameraPositionY', -10000, 10000);
-cameraGuiGroup.add(options, 'cameraPositionZ', -10000, 10000);
-cameraGuiGroup.add(options, 'cameraRotationX', 0, 360);
-cameraGuiGroup.add(options, 'cameraRotationY', 0, 360);
-cameraGuiGroup.add(options, 'cameraRotationZ', 0, 360);
+// var lightGuiGroup = gui.addFolder('Light');
+// lightGuiGroup.add(options, 'lightPositionX', -10000, 10000);
+// lightGuiGroup.add(options, 'lightPositionY', -10000, 10000);
+// lightGuiGroup.add(options, 'lightPositionZ', -10000, 10000);
 
-var lightGuiGroup = gui.addFolder('Light');
-lightGuiGroup.add(options, 'lightPositionX', -10000, 10000);
-lightGuiGroup.add(options, 'lightPositionY', -10000, 10000);
-lightGuiGroup.add(options, 'lightPositionZ', -10000, 10000);
-
-var otherGuiGroup = gui.addFolder('Other');
-otherGuiGroup.add(options, 'debugMode');
-otherGuiGroup.add(options, 'cubeSize', 5, 500);
+// var otherGuiGroup = gui.addFolder('Other');
+// otherGuiGroup.add(options, 'debugMode');
+// otherGuiGroup.add(options, 'cubeSize', 5, 500);
 
 var uniforms1 = {
 	time: { type: "f", value: 999999 },
